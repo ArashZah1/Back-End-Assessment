@@ -7,7 +7,7 @@
     <button id="complimentButton">Get a compliment</button>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
+    <script> 
       document.getElementById("complimentButton").onclick = function () {
         axios.get("http://localhost:4000/api/compliment/")
             .then(function (response) {
@@ -16,5 +16,24 @@
             });
       };
     </script>
+      <button id="fortuneButton">Get a fortune!</button>
+
+    <script>document.getElementById("fortuneButton").onclick = function() {
+      axios.get("http://localhost:4000/api/fortune/")
+          .then(function (response){
+            const data = response.data;
+            alert(data);
+          })
+    };      
+      </script>
+    <button id="motivationButton">Motivational Quotes</button>
+    <script>document.getElementById("motivationButton").onclick = function() {
+      axios.get("http://localhost:4000/api/motivation/")
+          .then(function (response){
+            const data = response.data;
+            alert(data);
+          })
+    };   
+    </Script>
   </body>
 </html>
