@@ -35,5 +35,23 @@
           })
     };   
     </Script>
+     <button id="habitButton">press for a new habit to start today!</button>
+     <script>document.getElementById("habitButton").onclick = function() {
+       axios.get("http://localhost:4000/api/habit/")
+           .then(function (response){
+             const data = response.data;
+             alert(data);
+           })
+     };   
+     </Script>
+     <button id="veggieButton">press for a new vegtable for your diet!</button>
+     <script>document.getElementById("veggieButton").onclick = function() {
+      axios.get("http://localhost:4000/api/veggie/")
+          .then(function (response){
+            const data = response.data;
+            alert(data);
+          })
+    };   
+    </Script>
   </body>
 </html>

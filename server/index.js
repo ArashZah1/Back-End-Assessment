@@ -34,11 +34,25 @@ const fortunes = ["A short pencil is usually better than a long memory any day."
   res.status(200).send(randomFortune)
   })
 
-  app.get("/api/lottery", (req, res) => {
+  app.get("/api/motivation", (req, res) => {
     const motive = ["You can totally do this", "Don’t tell people your plans", "No pressure, no diamonds."]
     let motiveIndex = Math.floor(Math.random() * motive.length );
     let randomMotive = motive[motiveIndex]
     
     res.status(200).send(randomMotive);
+  })
+  app.get("/api/habit", (req, res) => {
+    const habit = ["Go to bed earlier", "Spend an hour without a electronic", "Go excercise for 30 minutes", "eat extra veggies"]
+    let habitIndex = Math.floor(Math.random() * habit.length );
+    let randomHabit = habit[habitIndex]
+    
+    res.status(200).send(randomHabit);
+  })
+  app.get("/api/veggie", (req, res) => {
+    const veggie = ["celery", "carrots", "spinach", "zuchinni", "tomatos"]
+    let veggieIndex = Math.floor(Math.random() * veggie.length );
+    let randomVeggie = veggie[veggieIndex]
+    
+    res.status(200).send(randomVeggie);
   })
 app.listen(4000, () => console.log("Server running on 4000"));
